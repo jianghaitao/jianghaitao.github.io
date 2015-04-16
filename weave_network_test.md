@@ -42,6 +42,6 @@ TCP throughput was measured by the standard iperf tools. for exmaple
  Mbps | 641       | 641  | 656 |
  
 ## Summary
-My initial tests showed that Weave incurred some **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I did expect Weave to be this much different.
+My initial tests showed that Weave incurred some **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I didn't expect Weave to be this much different.
 
 I am curious to know the reasons behind the [Weave](https://github.com/zettio/weave) TCP bandwidth degradation and if there is way to improve. Any comments and suggestions are [welcomed](mailto:jianghaitao@gmail.com).
