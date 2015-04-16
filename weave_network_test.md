@@ -18,10 +18,10 @@ I have installed Docker 1.5 on both servers A and B, as well Weave version 0.9.0
 ./weave run 10.0.1.20/24 -ti --name haitao-19-w-2 \
           -v /home/htj:/home/htj wdc7:latest /bin/bash
 ```
-Note that I mount the host volume so they can share the resources like iperf with the Docker hosts.
+Note that I mount the host directory so containers can share the resources like iperf with their Docker hosts.
 
 ## Network Latency
-Network latency was tested using the flooded ping for more reliable results.
+Network latency was tested using the flooded ping for more reliable results, e.g. ping -f -c 16 10.0.1.19 from 10.0.1.20.
 
      | Host - Host | Host - Container | Container - Container
 ---- | ----------- | ---------------- | ---------------------
@@ -40,5 +40,5 @@ TCP throughput was measured by the standard iperf tools. for exmaple
  ---- | --------- | ------- | -------- | -------------
  Mbps | 641       | 641  | 656 |
  
-== Summary
-My initial tests showed that Weave incurred some 30% degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. I am curious to know the reason and if there is way to improve. Any comments and suggestions are welcomed.
+## Summary
+My initial tests showed that Weave incurred some **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I am curious to know the reasons behind the [Weave](https://github.com/zettio/weave) TCP bandwidth degradation and if there is way to improve. Any comments and suggestions are welcomed.
