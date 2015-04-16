@@ -40,7 +40,8 @@ TCP throughput was measured by the standard iperf tools. for exmaple
      | Host - Host | Host - Container | Container - Container |
  ---- | --------- | ------- | -------- | -------------
  Mbps | 641       | 641  | 656 |
- 
+The TCP throughput difference between the host and container is hardly noticable compare to host to host communication. But container to contaner looked like a totally different story.
+
 ## Summary
 My initial tests showed that Weave incurred some **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I didn't expect Weave to be this much different.
 
