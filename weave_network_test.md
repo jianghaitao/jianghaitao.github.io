@@ -8,6 +8,7 @@ Thanks to its great documentation and ease of usage, I had very little trouble s
 * Docker: 1.5.0, build a8a31ef/1.5.0
 * iperf version: 2.0.5 (08 Jul 2010) pthreads
 * Weave: 0.9.0
+
 I have installed Docker 1.5 on both servers A and B, as well Weave version 0.9.0. One Docker container was started on each server on the same virtual network:
 ```
 # On server A
@@ -41,4 +42,6 @@ TCP throughput was measured by the standard iperf tools. for exmaple
  Mbps | 641       | 641  | 656 |
  
 ## Summary
-My initial tests showed that Weave incurred some **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I am curious to know the reasons behind the [Weave](https://github.com/zettio/weave) TCP bandwidth degradation and if there is way to improve. Any comments and suggestions are [welcomed](mailto:jianghaitao@gmail.com).
+My initial tests showed that Weave incurred some **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I did expect Weave to be this much different.
+
+I am curious to know the reasons behind the [Weave](https://github.com/zettio/weave) TCP bandwidth degradation and if there is way to improve. Any comments and suggestions are [welcomed](mailto:jianghaitao@gmail.com).
