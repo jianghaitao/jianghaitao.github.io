@@ -40,7 +40,7 @@ TCP throughput was measured by the standard iperf tools. for exmaple
 ```
      | Host - Host | Host - Container | Container - Container |
  ---- | --------- | ------- | -------- | -------------
- Mbps | 643       | 641  | 656 |
+ Mbps | 943       | 941  | 656 |
 The TCP throughput difference between the host and container is hardly noticable compare to host to host communication. But container to contaner looked like a totally different story.
 
 ## Summary
