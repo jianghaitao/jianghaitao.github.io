@@ -30,6 +30,7 @@ min	| 0.088ms	| 0.094ms	| 0.475ms
 avg |	0.105ms		| 0.128ms		| 0.684ms
 max |	0.247ms		| 0.327ms		| 0.968ms
 mdev |	0.038ms	| 0.0608ms		| 0.1371ms 
+<img width=400 src="https://lh5.googleusercontent.com/-0rhGMbfG-TQ/VS9N8JPmHVI/AAAAAAABBqM/vEQ5k-LGL48/w1506-h904-no/docker_weave_latency.png">
 
 ## TCP Throughput
 TCP throughput was measured by the standard iperf tools. for exmaple
