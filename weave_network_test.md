@@ -40,10 +40,11 @@ TCP throughput was measured by the standard iperf tools. for exmaple
 ```
      | Host - Host | Host - Container | Container - Container |
  ---- | --------- | ------- | -------- | -------------
- Mbps | 943       | 941  | 656 |
-The TCP throughput difference between the host and container is hardly noticable compare to host to host communication. But container to contaner looked like a totally different story.
+ Avg Mbps | 943       | 941  | 656 |
+The TCP throughput difference between the host and container is hardly noticable compare to host to host communication. But container to contaner looked like a totally different story. 
+<img width=400 src="https://lh3.googleusercontent.com/-ZYVzSVvO3Ak/VTGJUoMbc_I/AAAAAAABB4I/a7-k4WUKS7c/w1506-h904-no/weave_tcp_throughput_derivation.png">
 
 ## Summary
-My initial tests showed that Weave incurred some **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I didn't expect Weave to be this much different.
+My initial tests showed that Weave incurred on averge **30%** degradation on the TCP throughput and 6.51X increase in network latency when it comes to the container to container communication. Honestly, I was a bit surprised. Acccording to [Introducing flannel: An etcd backed overlay network for containers](https://coreos.com/blog/introducing-rudder/), "flannel introduces non-trivial latency penalty, it has almost no affect on the bandwidth.". I didn't expect Weave to be this much different. There also noticable variations in the TCP throughput numbers for Weave as one can see above.
 
 I am curious to know the reasons behind the [Weave](https://github.com/zettio/weave) TCP bandwidth degradation and if there is way to improve. Any comments and suggestions are [welcomed](mailto:jianghaitao@gmail.com).
