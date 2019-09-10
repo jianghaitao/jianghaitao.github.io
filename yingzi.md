@@ -1,4 +1,4 @@
-# News Coverage of Yingzi and FPF
+# News Coverage of Yingzi and FPF (Partial, In Progress)
 
 ## News Medium Coverage (English)
 
